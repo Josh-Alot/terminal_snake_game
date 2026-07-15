@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -27,6 +26,8 @@ func main() {
 		log.Fatalf("failed to get the terminal size: %v", err)
 	}
 
-	fmt.Fprintf(os.Stdout, "terminal size: %dx%d\r\n", size.Width, size.Height)
+	if err := ui.DrawBox(os.Stdout, size); err != nil {
+		log.Fatalf("failed to draw box: %v", err)
+	}
 	// ... rest of the game
 }
