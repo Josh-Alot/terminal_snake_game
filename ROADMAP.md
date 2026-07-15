@@ -2,9 +2,9 @@
 
 ## Phase 1: Foundation & Terminal Control
 
-- [ ] **Environment Setup**: Initialize Go module and establish a clean project structure (`/internal/game`, `/internal/ui`, `/internal/input`).
-- [ ] **Terminal Raw Mode**: Implement a mechanism to put the terminal into "raw mode" to capture keystrokes instantly without requiring the Enter key.
-- [ ] **ANSI Utility Library**: Build a set of helper functions for:
+- [X] **Environment Setup**: Initialize Go module and establish a clean project structure (`/internal/game`, `/internal/ui`, `/internal/input`).
+- [X] **Terminal Raw Mode**: Implement a mechanism to put the terminal into "raw mode" to capture keystrokes instantly without requiring the Enter key.
+- [X] **ANSI Utility Library**: Build a set of helper functions for:
   - `MoveCursor(x, y)`: Using `\033[H` and related codes.
   - `ClearScreen()`: Efficiently clearing the view.
   - `HideCursor()` / `ShowCursor()`: Improving visual polish.
