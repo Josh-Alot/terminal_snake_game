@@ -8,7 +8,7 @@
   - `MoveCursor(x, y)`: Using `\033[H` and related codes.
   - `ClearScreen()`: Efficiently clearing the view.
   - `HideCursor()` / `ShowCursor()`: Improving visual polish.
-- [ ] **Dimension Tracking**: Implement dynamic detection of terminal width and height to define the game grid boundaries.
+- [X] **Dimension Tracking**: Implement dynamic detection of terminal width and height to define the game grid boundaries.
 - [ ] **Basic Rendering**: Build a simple `Draw` primitive to write characters at specific coordinates, validating the ANSI utilities and dimension tracking (e.g., drawing a static bordered box).
 
 ## Phase 2: The Input Engine

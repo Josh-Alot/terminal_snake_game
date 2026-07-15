@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -21,5 +22,11 @@ func main() {
 	ui.ClearScreen(os.Stdout)
 	ui.MoveCursor(os.Stdout, 1, 1)
 
+	size, err := ui.GetTerminalSize()
+	if err != nil {
+		log.Fatalf("failed to get the terminal size: %v", err)
+	}
+
+	fmt.Fprintf(os.Stdout, "terminal size: %dx%d\r\n", size.Width, size.Height)
 	// ... rest of the game
 }
