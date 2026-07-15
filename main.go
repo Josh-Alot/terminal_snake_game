@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
+	"github.com/terminal_snake_game/internal/game"
 	"github.com/terminal_snake_game/internal/input"
 	"github.com/terminal_snake_game/internal/ui"
 )
@@ -16,7 +18,11 @@ func main() {
 	defer restore()
 
 	ui.HideCursor(os.Stdout)
-	defer ui.ShowCursor(os.Stdout)
+	defer func() {
+		ui.ClearScreen(os.Stdout)
+		ui.MoveCursor(os.Stdout, 1, 1)
+		ui.ShowCursor(os.Stdout)
+	}()
 
 	ui.ClearScreen(os.Stdout)
 	ui.MoveCursor(os.Stdout, 1, 1)
@@ -29,5 +35,20 @@ func main() {
 	if err := ui.DrawBox(os.Stdout, size); err != nil {
 		log.Fatalf("failed to draw box: %v", err)
 	}
-	// ... rest of the game
+
+	dirCh := make(chan game.Direction, 10)
+	quitCh := make(chan struct{}, 1)
+	done := input.StartInputLoop(os.Stdin, false, dirCh, quitCh)
+
+	for {
+		select {
+		case dir := <-dirCh:
+			ui.MoveCursor(os.Stdout, 2, 2)
+			fmt.Fprintf(os.Stdout, "direction: %v   ", dir)
+		case <-quitCh:
+			return
+		case <-done:
+			return
+		}
+	}
 }

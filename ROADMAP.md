@@ -13,12 +13,12 @@
 
 ## Phase 2: The Input Engine
 
-- [ ] **Concurrent Input Loop**: Launch a dedicated goroutine to listen for keyboard events.
-- [ ] **Input Mapping**:
+- [X] **Concurrent Input Loop**: Launch a dedicated goroutine to listen for keyboard events.
+- [X] **Input Mapping**:
   - Map `WASD` and `Arrow Keys` to directions.
   - Implement `hjkl` mapping for Vim mode.
-- [ ] **Input Channel**: Use a thread-safe channel to send movement commands to the main game loop, ensuring the game tick doesn't block on user input.
-- [ ] **Directional Logic**: Implement a guard to prevent "180-degree turns" (e.g., if moving North, ignore South input).
+- [X] **Input Channel**: Use a thread-safe channel to send movement commands to the main game loop, ensuring the game tick doesn't block on user input.
+- [X] **Directional Logic**: Implement a guard to prevent "180-degree turns" (e.g., if moving North, ignore South input).
 
 ## Phase 3: Core Game Logic
 
