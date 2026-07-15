@@ -1,4 +1,4 @@
-module example.com/boilerplate
+module github.com/terminal_snake_game
 
 go 1.25.0
 
