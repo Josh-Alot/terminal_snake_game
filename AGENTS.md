@@ -42,3 +42,11 @@ Create a Terminal Snake Game
 - Keep game state encapsulated in a struct.
 - Use a channel-based input loop to avoid blocking the game tick.
 - Avoid external dependencies unless necessary for terminal manipulation.
+
+## Testing
+
+- Always prioritize unit tests when implementing features (TDD-first approach).
+- Write tests before implementation whenever feasible.
+- Abstract system/terminal dependencies behind interfaces so they can be mocked in unit tests.
+- Reserve integration/smoke tests (requiring a real TTY) for verifying actual OS-level behavior.
+- Run `go test ./...` and `gofmt ./...` before considering a feature complete.
