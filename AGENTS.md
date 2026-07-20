@@ -46,7 +46,7 @@ Create a Terminal Snake Game
 ## Testing
 
 - Always prioritize unit tests when implementing features (TDD-first approach).
-- Write tests before implementation whenever feasible.
+- Follow a strict per-function test => implementation cycle: write ONE test, run it and watch it fail (red), implement the minimum code to make it pass, run it again (green), then move on to the next test. Never write all tests up front and implement everything afterwards in a batch.
 - Abstract system/terminal dependencies behind interfaces so they can be mocked in unit tests.
 - Reserve integration/smoke tests (requiring a real TTY) for verifying actual OS-level behavior.
 - Run `go test ./...` and `gofmt ./...` before considering a feature complete.

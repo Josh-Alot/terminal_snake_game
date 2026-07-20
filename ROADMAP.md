@@ -22,35 +22,35 @@
 
 ## Phase 3: Core Game Logic
 
-- [ ] **State Modeling**:
+- [X] **State Modeling**:
   - `Point` struct for `X, Y` coordinates.
   - `GameState` struct to track the snake (slice of `Point`), food position, current direction, score, and tick interval.
-- [ ] **The Game Loop**: Implement a ticker-based loop:
+- [X] **The Game Loop**: Implement a ticker-based loop:
     1. **Process Input**: Check the input channel for direction changes.
     2. **Update State**: Move the snake head, shift the body, and check for food.
     3. **Collision Detection**: Check if the head intersects with walls or the snake's own body.
     4. **Spawn Food**: Randomly generate food coordinates, ensuring they do not overlap with the snake's current body.
-- [ ] **Difficulty Scaling**: Implement a formula to decrease the tick interval (increase speed) as the snake's length increases.
-- [ ] **Game State Rendering**: Draw the current `GameState` (snake body and food) each tick using the Phase 1 primitives, enabling visual verification of the game logic.
+- [X] **Difficulty Scaling**: Implement a formula to decrease the tick interval (increase speed) as the snake's length increases.
+- [X] **Game State Rendering**: Draw the current `GameState` (snake body and food) each tick using the Phase 1 primitives, enabling visual verification of the game logic.
 
 ## Phase 4: UI & User Experience
 
-- [ ] **Start Screen**:
+- [X] **Start Screen**:
   - Render a centered ASCII art title.
   - Create a navigable menu for `Start Game`, `Leaderboard`, `Vim Mode Toggle`, and `Quit`.
-- [ ] **Rendering Pipeline**: Optimize the Phase 3 rendering into a flicker-free pipeline by calculating the full frame and writing it to the terminal in one go or using strategic cursor movement.
-- [ ] **Game Over Sequence**:
+- [X] **Rendering Pipeline**: Optimize the Phase 3 rendering into a flicker-free pipeline by calculating the full frame and writing it to the terminal in one go or using strategic cursor movement.
+- [X] **Game Over Sequence**:
   - Display an ASCII box with the final score.
   - **Player Identity**: Implement a 3-character uppercase name input field.
   - Menu options to `Restart (R)` or `Return to Menu (Q)`.
 
 ## Phase 5: Persistence & Polishing
 
-- [ ] **Leaderboard System**:
+- [X] **Leaderboard System**:
   - Implement file I/O for `leaderboard.txt`.
   - Logic to insert new scores, sort them, and truncate the list to the top 10.
-- [ ] **Visual Refinement**: Fine-tune the ASCII characters (`█` for body, `*` for food) and ensure the layout is centered regardless of terminal size.
-- [ ] **Code Quality**:
+- [X] **Visual Refinement**: Fine-tune the ASCII characters (`█` for body, `*` for food) and ensure the layout is centered regardless of terminal size.
+- [X] **Code Quality**:
   - Run `gofmt` across the project.
   - Ensure strict error handling for all terminal and file operations.
-- [ ] **Verification**: Systematic testing of all three input schemes and boundary collision edge cases.
+- [X] **Verification**: Systematic testing of all three input schemes and boundary collision edge cases.
